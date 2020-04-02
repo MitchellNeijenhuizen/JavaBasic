@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class DemonstrationOfIfBlock {
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter a value for x: ");
         double x = scanner.nextDouble();
