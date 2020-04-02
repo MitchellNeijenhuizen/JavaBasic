@@ -1,10 +1,11 @@
-/*package com.company;
+package com.company;
 
 import java.util.Scanner;
 
 public class SentenceBuilder {
 
-    public void sentenceBuilder() {
+    public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter an article: ");
         String article = scanner.next();
@@ -14,8 +15,6 @@ public class SentenceBuilder {
         String verb = scanner.next();
         System.out.println(article + " " + noun + " " + verb);
     }
-
-
-}*/
+}
 
 
