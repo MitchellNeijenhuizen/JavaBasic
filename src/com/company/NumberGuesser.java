@@ -3,7 +3,7 @@ package com.company;
 import java.util.Random;
 import java.util.Scanner;
 
-public class NumberGuesser {
+class NumberGuesser {
 
     private int randomNumber;
 
