@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class NumberGuesserGUI extends JFrame implements ActionListener {
 
     int userGuess;
+    NumberGuesserTwo game = new NumberGuesserTwo();
 
     String text = "Please enter a a number in the field";
     JLabel label = new JLabel(text);
@@ -18,6 +19,9 @@ public class NumberGuesserGUI extends JFrame implements ActionListener {
         getContentPane().add(textField, BorderLayout.SOUTH);
 
         textField.addActionListener(this);
+
+        int upperBoundRandomNumber = 11;
+        game.setRandomNumber(upperBoundRandomNumber);
     }
 
     @Override
@@ -25,16 +29,14 @@ public class NumberGuesserGUI extends JFrame implements ActionListener {
         String textField = e.getActionCommand();
         userGuess = Integer.parseInt(textField);
 
-        int upperBoundRandomNumber = 11;
-        NumberGuesserTwo game = new NumberGuesserTwo();
-        game.setRandomNumber(upperBoundRandomNumber);
+        System.out.println(userGuess);
+        System.out.println(game.getRandomNumber());
 
-        text = "Please enter a a number in the field";
-        while ( ! (game.getRandomNumber() == userGuess)) {
-            text = "Please try again";
-            if ((game.getRandomNumber() == userGuess)) {
-                text = "Please try again";
-            }
+
+        if (!(game.getRandomNumber() == userGuess)) {
+            label.setText("Please try again");
+        } else {
+            label.setText("Correct");
         }
     }
 
@@ -43,9 +45,8 @@ public class NumberGuesserGUI extends JFrame implements ActionListener {
         numberGuesserGUI.setSize(400, 400);
         numberGuesserGUI.setVisible(true);
         numberGuesserGUI.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
         }
-}
+    }
 
 
 
